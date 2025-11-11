@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
+  color: #eee;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#app {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 0.5rem 0;
+  font-size: 2.4rem;
+  color: #00bfff;
+  text-shadow: 0 0 15px #00bfff;
+}
+
+button {
+  padding: 0.4rem 1rem;
+  margin: 0.3rem;
+  border: none;
+  border-radius: 4px;
+  background: #222;
+  color: #eee;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: #00bfff;
+  color: #000;
+}
+
+#stats {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+.stat-card {
+  background: #111;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-align: center;
+  min-width: 80px;
+  box-shadow: 0 0 10px #00bfff66;
+}
+
+#text-display {
+  font-size: 2rem;
+  max-width: 800px;
+  margin: 1rem;
+  text-align: center;
+}
+#text-display .typed {
+  color: #00ffcc;
+}
+#text-display .wrong {
+  color: #ff5555;
+}
+#text-display .current {
+  background: #00bfff88;
+}
+#text-display .untyped {
+  color: #666;
+}
+
+#input-field {
+  width: 80%;
+  max-width: 800px;
+  font-size: 1.6rem;
+  background: #111;
+  color: #fff;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  margin-top: 1rem;
+}
+
+#track-container {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  height: 60px;
+  background: #222;
+  border: 3px solid #00bfff44;
+  border-radius: 8px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.car {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 60px;
+  transform: translateY(-50%);
+  transition: 0.08s ease-out;
+}
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.3s;
+}
+#overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+#results {
+  background: #111;
+  color: #00bfff;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 20px #00bfff99;
+}
+
+/* Floating letters */
+.floating-letter {
+  position: fixed;
+  font-size: 2rem;
+  font-weight: 600;
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.7);
+  animation: floatUp 1.4s ease-out forwards;
+  z-index: 1;
+  text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-120px) scale(1.4);
+  }
+}
+
+@media (max-width: 760px) {
+  #text-display {
+    font-size: 1.4rem;
+  }
+  .floating-letter {
+    font-size: 1.5rem;
+  }
+}

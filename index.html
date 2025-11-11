@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typing Race — Neon Edition</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Neon cursor canvas (background) -->
+  <canvas id="neonCanvas"></canvas>
+
+  <div id="app">
+    <h1>🏎️ <span id="game-title">Typing Race Neon</span> ⚡</h1>
+
+    <!-- Stats Panel -->
+    <div id="stats">
+      <div class="stat-card">
+        <span id="wpm" class="stat-value">0</span>
+        <span class="stat-title">WPM</span>
+      </div>
+      <div class="stat-card">
+        <span id="acc" class="stat-value">0%</span>
+        <span class="stat-title">Accuracy</span>
+      </div>
+      <div class="stat-card">
+        <span id="timer" class="stat-value">0.00</span>
+        <span class="stat-title">Time</span>
+      </div>
+    </div>
+
+    <!-- Difficulty Selector -->
+    <div id="controls">
+      <label>Difficulty: </label>
+      <button data-diff="easy" class="diff-btn">Easy</button>
+      <button data-diff="medium" class="diff-btn">Medium</button>
+      <button data-diff="hard" class="diff-btn">Hard</button>
+    </div>
+
+    <!-- Text Display -->
+    <div id="text-display"></div>
+
+    <!-- Input Field -->
+    <input type="text" id="input-field" autocomplete="off" placeholder="Tap Start..." />
+
+    <!-- Racing Track -->
+    <div id="track-container">
+      <div id="track">
+        <div id="finish-line"></div>
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/42/42609.png"
+          alt="player car"
+          class="car player-car"
+        />
+      </div>
+    </div>
+
+    <!-- Results Overlay -->
+    <div id="overlay">
+      <div id="results">
+        <h2>Race Finished!</h2>
+        <div class="stat">WPM: <span id="final-wpm"></span></div>
+        <div class="stat">Accuracy: <span id="final-acc"></span></div>
+        <div class="stat">Time: <span id="final-time"></span></div>
+        <button id="restart-btn">Race Again</button>
+        <button id="new-text-btn">New Text</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
